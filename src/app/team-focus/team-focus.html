@@ -1,0 +1,29 @@
+<section class="team-focus-section py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-main-title">Built for Every Team</h2>
+        <p class="section-main-subtitle">Whether you're designing, developing, or marketing, Marketify provides the tools you need.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let member of teamMembers" class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="team-member-card p-4 text-center h-100">
+          <div class="team-member-icon-wrapper mb-3">
+            <i class="{{ member.iconClass }} team-member-icon"></i>
+          </div>
+          <h3 class="team-member-role-title h5 mb-3">{{ member.roleTitle }}</h3>
+          <p class="team-member-description small text-muted mb-4">{{ member.roleDescription }}</p>
+
+          <ul class="list-unstyled team-member-key-points text-start">
+            <li *ngFor="let point of member.keyPoints" class="d-flex align-items-start mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2 pt-1"></i>
+              <span>{{ point }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

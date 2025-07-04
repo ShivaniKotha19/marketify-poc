@@ -1,0 +1,104 @@
+/* Team Focus Section Specific Styling */
+.team-focus-section {
+  /* py-5 from Bootstrap handles overall vertical padding.
+     Can add a background if desired, e.g., a very light off-white or gray
+     if different from the main body background. For now, it will inherit. */
+}
+
+.section-main-title { /* Already styled in core-features, but can be fine-tuned if needed */
+  font-size: 2.25rem; /* Consistent with other section titles */
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 0.75rem;
+}
+
+.section-main-subtitle { /* Consistent with other section subtitles */
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 700px; /* Slightly wider for this section's intro */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-member-card {
+  background-color: #ffffff; /* White background for cards */
+  border: 1px solid #e9ecef; /* Subtle border */
+  border-radius: 0.75rem; /* Consistent rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* text-align: center; is applied in HTML, good for icon and title */
+  /* p-4 and h-100 are from Bootstrap classes in HTML */
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Enhanced shadow on hover */
+}
+
+.team-member-icon-wrapper {
+  /* Can add specific wrapper styles if needed, e.g. background shape */
+}
+
+.team-member-icon { /* This is the <i> tag for the main role icon */
+  font-size: 3rem; /* Prominent icon size */
+  color: #007bff; /* Main theme blue */
+  margin-bottom: 1rem; /* Space below icon */
+  display: inline-block; /* Ensures margin is applied correctly */
+}
+
+.team-member-role-title { /* This is the h3.h5 element */
+  font-weight: 600; /* Make role title a bit bolder */
+  color: #343a40;
+}
+
+.team-member-description {
+  /* font-size: 0.9rem; from small class */
+  /* color: #6c757d; from text-muted class */
+  line-height: 1.6;
+}
+
+.team-member-key-points {
+  margin-top: auto; /* Pushes key points to bottom if card height varies due to d-flex */
+  padding-top: 1rem; /* Space above key points list */
+}
+
+.team-member-key-points li {
+  font-size: 0.95rem;
+  color: #495057; /* Slightly darker than text-muted for better readability */
+}
+
+.team-member-key-points li .bi-check-circle-fill {
+  /* text-success from Bootstrap handles color (green) */
+  /* me-2 from Bootstrap handles margin-right */
+  /* pt-1 from Bootstrap for slight top padding to align with text */
+  font-size: 1.1em; /* Make tick slightly larger than text if desired */
+  position: relative;
+  top: -1px; /* Fine-tune vertical alignment if pt-1 isn't perfect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) { /* Medium devices (tablets, less than 992px) */
+  .team-member-card {
+    /* Cards will stack to 2 per row if col-md-6 was used, or 1 if only col-lg-4 */
+    /* If col-md-6, they might appear a bit wide. Adjust if needed. */
+    /* Current setup: col-lg-4 so they stack to 1 below lg. */
+  }
+}
+
+@media (max-width: 767.98px) { /* Small devices (landscape phones, less than 768px) */
+  .section-main-title {
+    font-size: 2rem;
+  }
+  .section-main-subtitle {
+    font-size: 1rem;
+  }
+  .team-member-icon {
+    font-size: 2.5rem;
+  }
+  .team-member-role-title { /* h3.h5 */
+    font-size: 1.15rem; /* Bootstrap h5 is 1.25rem, this makes it slightly smaller */
+  }
+   .team-member-key-points li {
+    font-size: 0.9rem;
+  }
+}

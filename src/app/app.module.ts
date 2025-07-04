@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { CoreFeaturesComponent } from './core-features/core-features.component';
+import { TeamFocusComponent } from './team-focus/team-focus.component';
 
 // Lottie
 // import { LottieModule } from 'ngx-lottie'; // Removing Lottie
@@ -21,7 +22,8 @@ import { CoreFeaturesComponent } from './core-features/core-features.component';
     AppComponent,
     HeaderComponent,
     HeroComponent,
-    CoreFeaturesComponent
+    CoreFeaturesComponent,
+    TeamFocusComponent
   ],
   imports: [
     BrowserModule,
