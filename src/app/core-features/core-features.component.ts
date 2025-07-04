@@ -1,5 +1,3 @@
-import { Component } from '@angular/core';
-
 import { Component, OnInit, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 
 interface Feature {
