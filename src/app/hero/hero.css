@@ -216,38 +216,32 @@
   0% {
     bottom: -150px; /* Start below the viewport */
     opacity: 0; /* Start fully transparent */
-    transform: translateX(0px);
+    transform: translateX(0px) translateY(0px); /* Ensure translateY is part of transform */
   }
   10% {
-      opacity: 0.2; /* Fade in */
+    opacity: 0.2; /* Fade in */
+  }
+  25% {
+    transform: translateX(20px) translateY(-25vh);
+  }
+  50% {
+    transform: translateX(-20px) translateY(-50vh);
+  }
+  75% {
+    transform: translateX(20px) translateY(-75vh);
   }
   90% {
-      opacity: 0.1; /* Start to fade out */
+    opacity: 0.1; /* Start to fade out */
   }
   100% {
-    bottom: 105vh; /* End well above the viewport */
+    bottom: 105vh; /* Ensure it goes far enough up; translateY will also contribute */
     opacity: 0; /* Fade out completely */
-    transform: translateX(20px) translateX(-20px); /* Example of alternating drift */
+    transform: translateX(0px) translateY(-100vh);
   }
 }
-/* Add a second animation for more varied horizontal movement */
-.bubble:nth-child(odd) {
-  animation-name: floatBubble, driftBubble;
-  animation-timing-function: linear, ease-in-out;
-}
-.bubble:nth-child(even) {
-  animation-name: floatBubble, driftBubbleAlt;
-  animation-timing-function: linear, ease-in-out;
-}
 
-@keyframes driftBubble {
-  0% { transform: translateX(0px); }
-  50% { transform: translateX(30px); }
-  100% { transform: translateX(0px); }
-}
-
-@keyframes driftBubbleAlt {
-  0% { transform: translateX(0px); }
-  50% { transform: translateX(-30px); }
-  100% { transform: translateX(0px); }
-}
+/* Removed separate drift animations and overrides for odd/even children.
+   All bubbles will use the modified floatBubble animation.
+   Varied horizontal drift can be achieved by different animation-delay
+   and animation-duration on individual bubbles, causing their translateX
+   phases within floatBubble to be out of sync. */
