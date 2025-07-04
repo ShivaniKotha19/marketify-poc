@@ -7,10 +7,10 @@
       </div>
     </div>
 
-    <div class="features-list-container"> {/* New container for centering the single column */}
-      <div *ngFor="let feature of features; let i = index" class="mb-4"> {/* mb-4 for spacing between cards */}
+    <div class="features-list-container"> 
+      <div *ngFor="let feature of features; let i = index" class="mb-4"> 
         <div class="feature-card h-100" #featureCard [style.transition-delay]="i * 100 + 'ms'">
-          <div class="feature-card-icon-wrapper mb-3"> {/* Wrapper for icon if needed for alignment */}
+          <div class="feature-card-icon-wrapper mb-3">
             <i [class]="feature.iconPlaceholder + ' feature-card-icon-element'"></i>
           </div>
           <h4 class="feature-card-title mb-2">{{ feature.title }}</h4>
