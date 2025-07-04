@@ -4,11 +4,13 @@
   /* py-5 from Bootstrap handles padding, but can add more if needed */
 }
 
-/* New container for centering the single column of cards */
+/* REMOVED: .features-list-container styles for single-column layout */
+/*
 .features-list-container {
-  max-width: 700px; /* Adjust as needed for desired card width */
-  margin: 0 auto; /* Center the container */
+  max-width: 700px;
+  margin: 0 auto;
 }
+*/
 
 .section-title {
   font-size: 2.25rem;
