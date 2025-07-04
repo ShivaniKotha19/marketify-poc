@@ -1,0 +1,125 @@
+/* Core Features Section Specific Styling */
+.core-features-section {
+  background-color: #f8f9fa; /* Light gray background, or can be transparent to body */
+  /* py-5 from Bootstrap handles padding, but can add more if needed */
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #343a40; /* Darker heading color */
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #6c757d; /* Muted subtitle color */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 0.75rem; /* Softer rounded corners */
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Initial subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* For positioning the hover glow pseudo-element */
+  overflow: hidden; /* To contain the glow pseudo-element if it uses inset */
+}
+
+.feature-card::before { /* Pseudo-element for hover gradient outline/glow */
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 0.75rem; /* Match card's border-radius */
+  padding: 2px; /* Effectively the border thickness */
+  background-image: linear-gradient(to right, #007bff, #00c6ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1; /* Place it behind the card's content but above its background for border effect */
+  -webkit-mask: /* Mask to create the border effect */
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px); /* Slightly more lift */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
+
+.feature-card:hover::before {
+  opacity: 1; /* Show gradient border/glow on hover */
+}
+
+.feature-card-icon {
+  margin-bottom: 1.25rem;
+  /* Placeholder styling for icon - replace with actual icons */
+}
+
+.feature-card-icon .icon-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background for icon area */
+  color: #007bff; /* Blue color for placeholder text/icon */
+  font-size: 1.5rem; /* Size of placeholder text/icon */
+  font-weight: 600;
+  border-radius: 50%; /* Circular icon placeholder */
+  /* Example: you might use <i> tags with icon font classes here instead of a span */
+}
+
+.feature-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments for card content if needed beyond Bootstrap grid */
+/* (Bootstrap grid handles column stacking, this would be for content within cards) */
+
+/* Entry Animation Styles */
+.feature-card {
+  /* ... existing styles ... */
+  opacity: 0;
+  transform: translateY(30px); /* Start slightly lower */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease; /* Added opacity and transform to existing transition */
+  /* transition-delay is set inline via [style.transition-delay] */
+}
+
+.feature-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    padding: 1.5rem 1rem;
+  }
+  .feature-card-title {
+    font-size: 1.15rem;
+  }
+  .feature-card-description {
+    font-size: 0.9rem;
+  }
+  .feature-card-icon .icon-placeholder {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+}

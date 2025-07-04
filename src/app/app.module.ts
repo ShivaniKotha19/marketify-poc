@@ -5,26 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
+import { CoreFeaturesComponent } from './core-features/core-features.component';
 
 // Lottie
-import { LottieModule } from 'ngx-lottie';
-import player from 'lottie-web';
+// import { LottieModule } from 'ngx-lottie'; // Removing Lottie
+// import player from 'lottie-web'; // Removing Lottie
 
 // Export function for Lottie player (AOT compatibility)
-export function playerFactory() {
-  return player;
-}
+// export function playerFactory() { // Removing Lottie
+//   return player;
+// }
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HeroComponent
+    HeroComponent,
+    CoreFeaturesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LottieModule.forRoot({ player: playerFactory })
+    // LottieModule.forRoot({ player: playerFactory }) // Removing Lottie
   ],
   providers: [],
   bootstrap: [AppComponent]
