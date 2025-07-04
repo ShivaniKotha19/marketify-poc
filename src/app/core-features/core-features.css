@@ -4,6 +4,12 @@
   /* py-5 from Bootstrap handles padding, but can add more if needed */
 }
 
+/* New container for centering the single column of cards */
+.features-list-container {
+  max-width: 700px; /* Adjust as needed for desired card width */
+  margin: 0 auto; /* Center the container */
+}
+
 .section-title {
   font-size: 2.25rem;
   font-weight: 700;
@@ -107,6 +113,23 @@
   transform: translateY(0);
 }
 
+/* Icon Styling (using Bootstrap Icons) */
+.feature-card-icon-wrapper {
+  /* This wrapper can be used for additional spacing or alignment if needed */
+  /* text-align: center; is on .feature-card, which should center this block */
+}
+
+.feature-card-icon-element { /* This is the <i> tag */
+  font-size: 2.8rem; /* Adjust icon size */
+  color: #007bff; /* Theme blue for icons */
+  margin-bottom: 0.5rem; /* Readjust if .feature-card-icon (old wrapper) had specific spacing */
+  display: inline-block; /* Allows margin auto if text-align on parent is not enough */
+}
+
+/* Remove old placeholder styles if any were very specific beyond the class name */
+/* .feature-card-icon .icon-placeholder (old structure) styles are effectively replaced by .feature-card-icon-element */
+
+
 @media (max-width: 768px) {
   .feature-card {
     padding: 1.5rem 1rem;
@@ -117,9 +140,7 @@
   .feature-card-description {
     font-size: 0.9rem;
   }
-  .feature-card-icon .icon-placeholder {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
+  .feature-card-icon-element {
+    font-size: 2.5rem; /* Slightly smaller icon for mobile */
   }
 }

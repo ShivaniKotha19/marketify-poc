@@ -20,22 +20,22 @@ export class CoreFeaturesComponent implements OnInit, AfterViewInit {
     {
       title: 'Logo & Brand Assets',
       description: 'Get high-quality logos, icons, and visual assets in multiple formats and resolutions.',
-      iconPlaceholder: 'assets-icon'
+      iconPlaceholder: 'bi bi-images'
     },
     {
       title: 'Brand Colors & Fonts',
       description: 'Access complete brand palettes, typography choices, and design system information.',
-      iconPlaceholder: 'colors-fonts-icon'
+      iconPlaceholder: 'bi bi-palette2'
     },
     {
       title: 'Real-Time API',
       description: 'Lightning-fast API responses with comprehensive data structures and easy integration.',
-      iconPlaceholder: 'api-icon'
+      iconPlaceholder: 'bi bi-lightning-charge-fill'
     },
     {
       title: 'Always Updated',
       description: 'Automatically synced brand information that stays current with the latest changes.',
-      iconPlaceholder: 'updated-icon'
+      iconPlaceholder: 'bi bi-arrow-repeat'
     }
   ];
 
