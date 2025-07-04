@@ -2,12 +2,21 @@
   <div class="logo">
     <a href="#">Marketify</a>
   </div>
-  <ul class="nav-links">
+  <button class="hamburger-menu" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <ul class="nav-links" [class.active]="isMobileMenuOpen">
+    <li><a href="#">Home</a></li>
     <li><a href="#">Features</a></li>
+    <li><a href="#">Developers</a></li>
     <li><a href="#">Pricing</a></li>
-    <li><a href="#">Docs</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Login</a></li>
+    <li class="cta-mobile-item"><button class="cta-button">Get Started</button></li>
   </ul>
-  <div class="cta-button-container">
+  <div class="cta-button-container desktop-cta">
     <button class="cta-button">Get Started</button>
   </div>
 </nav>

@@ -28,11 +28,12 @@
   font-weight: 700;
   color: #ffffff; /* White logo text */
   text-decoration: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo a:hover {
   transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
   text-decoration: none;
 }
 
@@ -99,4 +100,111 @@
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5); /* Enhanced glow effect */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none; /* Hidden by default, shown in media query */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001; /* Ensure it's above other header elements if needed */
+}
+
+.hamburger-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #ffffff; /* White bars */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Styling for hamburger animation (optional, can be enhanced later) */
+.hamburger-menu.active .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Hide mobile CTA list item on desktop */
+.nav-links li.cta-mobile-item {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .marketify-header {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(20, 30, 40, 0.95); /* Darker, slightly transparent background for mobile menu */
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when mobile menu is active */
+  }
+
+  .nav-links li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+    color: #ffffff; /* White text for mobile menu links */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  }
+
+  .nav-links a::after {
+    display: none; /* Hide underline animation on mobile */
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Light blue hover for mobile links */
+    color: #ffffff;
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .desktop-cta { /* Renamed from .cta-button-container for clarity */
+    display: none; /* Hide the desktop CTA button container on mobile */
+  }
+
+  /* Integrate CTA into mobile menu */
+  .nav-links li.cta-mobile-item {
+    display: block; /* Show the CTA list item in the mobile menu */
+    padding: 1rem;
+    text-align: center; /* Center the button within the list item */
+  }
+
+  .nav-links li.cta-mobile-item .cta-button {
+    width: auto;
+    margin: 0.5rem auto;
+    display: inline-block;
+    padding: 0.75rem 2.5rem; /* Ensure padding is good for mobile tap target */
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger menu on mobile */
+  }
 }
