@@ -1,0 +1,23 @@
+<section class="core-features-section py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-title">Discover Marketify's Core Capabilities</h2>
+        <p class="section-subtitle">Everything you need to harness brand data, effortlessly.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let feature of features; let i = index" class="col-lg-3 col-md-6 mb-4">
+        <div class="feature-card h-100" #featureCard [style.transition-delay]="i * 100 + 'ms'">
+          <div class="feature-card-icon mb-3">
+            <!-- Placeholder for icon - will be styled with CSS or replaced with actual icon later -->
+            <span class="icon-placeholder">{{ feature.iconPlaceholder }}</span>
+          </div>
+          <h4 class="feature-card-title mb-2">{{ feature.title }}</h4>
+          <p class="feature-card-description">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
