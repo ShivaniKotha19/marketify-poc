@@ -8,8 +8,8 @@
   padding: 3rem 1.5rem; /* Vertical and horizontal padding */
   position: relative;
   overflow: hidden;
-  background-color: #0a192f; /* Temporary dark fallback for light text */
-  color: #ffffff;
+  /* background-color: #0a192f; */ /* REMOVED for transparent background */
+  color: #212529; /* Default dark text color for hero section */
 }
 
 /* Content Wrapper */
@@ -25,8 +25,11 @@
   font-weight: 700;
   line-height: 1.25;
   margin-bottom: 1.25rem;
-  color: #e6f1ff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for readability */
+  background-image: linear-gradient(to right, #007bff, #00c6ff); /* Blue gradient for text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 0 2px 4px rgba(0,0,0,0.1); Removed as it conflicts with gradient text */
 }
 
 /* Subtext Styling */
@@ -34,7 +37,7 @@
   font-size: 1.2rem;
   line-height: 1.65;
   margin-bottom: 2.25rem;
-  color: #ccd6f6;
+  color: #495057; /* Darker gray for good readability on light page background */
   opacity: 0.9;
   max-width: 600px; /* Prevent subtext from being too wide */
   margin-left: auto;
@@ -160,53 +163,53 @@
 }
 
 /* Define bubble variations */
-.bubble:nth-child(1) {
-  width: 60px; height: 60px; left: 10%; background-color: rgba(0, 123, 255, 0.18); /* Soft Blue */
-  animation-duration: 22s; animation-delay: 0s;
+.bubble:nth-child(1) { /* Large Soft Blue */
+  width: 180px; height: 180px; left: 10%; background-color: rgba(135, 206, 250, 0.15);
+  animation-duration: 25s; animation-delay: 0s;
 }
-.bubble:nth-child(2) {
-  width: 90px; height: 90px; left: 20%; background-color: rgba(147, 112, 219, 0.12); /* Medium Purple (soft) */
-  animation-duration: 28s; animation-delay: 1.5s;
+.bubble:nth-child(2) { /* Medium Pastel Pink */
+  width: 100px; height: 100px; left: 20%; background-color: rgba(255, 192, 203, 0.2);
+  animation-duration: 20s; animation-delay: 2.5s;
 }
-.bubble:nth-child(3) {
-  width: 40px; height: 40px; left: 30%; background-color: rgba(255, 182, 193, 0.18); /* Light Pink */
-  animation-duration: 18s; animation-delay: 3s;
+.bubble:nth-child(3) { /* Small Lavender Purple */
+  width: 50px; height: 50px; left: 30%; background-color: rgba(230, 230, 250, 0.18);
+  animation-duration: 30s; animation-delay: 1s;
 }
-.bubble:nth-child(4) {
-  width: 120px; height: 120px; left: 40%; background-color: rgba(60, 179, 113, 0.12); /* Medium Sea Green (soft) */
-  animation-duration: 35s; animation-delay: 0.5s;
+.bubble:nth-child(4) { /* Large Muted Aqua/Teal */
+  width: 200px; height: 200px; left: 40%; background-color: rgba(72, 209, 204, 0.1);
+  animation-duration: 38s; animation-delay: 3s;
 }
-.bubble:nth-child(5) {
-  width: 70px; height: 70px; left: 50%; background-color: rgba(173, 216, 230, 0.18); /* Light Blue */
-  animation-duration: 20s; animation-delay: 4s;
+.bubble:nth-child(5) { /* Medium Soft Blue */
+  width: 110px; height: 110px; left: 50%; background-color: rgba(173, 216, 230, 0.2);
+  animation-duration: 23s; animation-delay: 0.8s;
 }
-.bubble:nth-child(6) {
-  width: 50px; height: 50px; left: 60%; background-color: rgba(221, 160, 221, 0.18); /* Plum (soft) */
-  animation-duration: 32s; animation-delay: 2.5s;
+.bubble:nth-child(6) { /* Small Pastel Pink */
+  width: 60px; height: 60px; left: 60%; background-color: rgba(255, 182, 193, 0.15);
+  animation-duration: 26s; animation-delay: 4s;
 }
-.bubble:nth-child(7) {
-  width: 100px; height: 100px; left: 70%; background-color: rgba(175, 238, 238, 0.12); /* Pale Turquoise */
-  animation-duration: 25s; animation-delay: 1s;
+.bubble:nth-child(7) { /* Medium Lavender Purple */
+  width: 130px; height: 130px; left: 70%; background-color: rgba(216, 191, 216, 0.12);
+  animation-duration: 21s; animation-delay: 2s;
 }
-.bubble:nth-child(8) {
-  width: 45px; height: 45px; left: 80%; background-color: rgba(240, 248, 255, 0.22); /* Alice Blue (whitish) */
-  animation-duration: 15s; animation-delay: 5s;
+.bubble:nth-child(8) { /* Small Muted Aqua/Teal */
+  width: 70px; height: 70px; left: 80%; background-color: rgba(127, 255, 212, 0.18);
+  animation-duration: 33s; animation-delay: 0.3s;
 }
-.bubble:nth-child(9) {
-  width: 110px; height: 110px; left: 90%; background-color: rgba(0, 198, 255, 0.12); /* Sky Blue (from gradient) */
-  animation-duration: 30s; animation-delay: 0.2s;
+.bubble:nth-child(9) { /* Large Whitish/Light Tech Tone */
+  width: 170px; height: 170px; left: 90%; background-color: rgba(240, 248, 255, 0.15); /* Alice Blue */
+  animation-duration: 27s; animation-delay: 1.2s;
 }
-.bubble:nth-child(10) {
-  width: 75px; height: 75px; left: 5%; background-color: rgba(255, 228, 225, 0.18); /* Misty Rose (soft pink) */
-  animation-duration: 26s; animation-delay: 3.8s;
+.bubble:nth-child(10) { /* Medium Soft Blue */
+  width: 95px; height: 95px; left: 5%; background-color: rgba(135, 206, 250, 0.22);
+  animation-duration: 24s; animation-delay: 3.5s;
 }
-.bubble:nth-child(11) {
-  width: 55px; height: 55px; left: 65%; background-color: rgba(152, 251, 152, 0.15); /* Pale Green (soft) */
-  animation-duration: 23s; animation-delay: 4.5s;
+.bubble:nth-child(11) { /* Small Pastel Pink */
+  width: 65px; height: 65px; left: 65%; background-color: rgba(255, 192, 203, 0.1);
+  animation-duration: 19s; animation-delay: 5s;
 }
-.bubble:nth-child(12) {
-  width: 105px; height: 105px; left: 35%; background-color: rgba(216, 191, 216, 0.12); /* Thistle (light purple) */
-  animation-duration: 29s; animation-delay: 2.2s;
+.bubble:nth-child(12) { /* Medium Lavender/Light Tech Tone */
+  width: 125px; height: 125px; left: 25%; background-color: rgba(220, 220, 220, 0.15); /* Gainsboro - light gray tech */
+  animation-duration: 31s; animation-delay: 1.8s;
 }
 
 @keyframes floatBubble {
