@@ -4,13 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-// import { HeroComponent } from './hero/hero.component'; // Removing HeroComponent
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    // HeroComponent // Removing HeroComponent
+    HeroComponent
   ],
   imports: [
     BrowserModule,
