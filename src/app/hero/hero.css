@@ -143,7 +143,7 @@
   }
 }
 
-/* Animated Bubbles Background */
+/* Animated Bubbles Background Container - Lottie will fill this */
 .bubbles-background {
   position: absolute;
   top: 0;
@@ -151,97 +151,11 @@
   width: 100%;
   height: 100%;
   z-index: 0; /* Behind hero-content */
-  /* overflow: hidden; is on .hero-container */
+  /* overflow: hidden; is on .hero-container, which is good */
+  /* The ng-lottie component might need specific styling to fill this,
+     or it might do so by default. We'll assume it fills for now.
+     If not, width: 100%; height: 100%; might be needed on the ng-lottie element itself too.
+  */
 }
 
-.bubble {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0; /* Start transparent, fade in with animation-delay */
-  animation: floatBubble 20s infinite linear;
-  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Optional: subtle glow */
-}
-
-/* Define bubble variations */
-.bubble:nth-child(1) { /* Large Soft Blue */
-  width: 180px; height: 180px; left: 10%; background-color: rgba(135, 206, 250, 0.15);
-  animation-duration: 25s; animation-delay: 0s;
-}
-.bubble:nth-child(2) { /* Medium Pastel Pink */
-  width: 100px; height: 100px; left: 20%; background-color: rgba(255, 192, 203, 0.2);
-  animation-duration: 20s; animation-delay: 2.5s;
-}
-.bubble:nth-child(3) { /* Small Lavender Purple */
-  width: 50px; height: 50px; left: 30%; background-color: rgba(230, 230, 250, 0.18);
-  animation-duration: 30s; animation-delay: 1s;
-}
-.bubble:nth-child(4) { /* Large Muted Aqua/Teal */
-  width: 200px; height: 200px; left: 40%; background-color: rgba(72, 209, 204, 0.1);
-  animation-duration: 38s; animation-delay: 3s;
-}
-.bubble:nth-child(5) { /* Medium Soft Blue */
-  width: 110px; height: 110px; left: 50%; background-color: rgba(173, 216, 230, 0.2);
-  animation-duration: 23s; animation-delay: 0.8s;
-}
-.bubble:nth-child(6) { /* Small Pastel Pink */
-  width: 60px; height: 60px; left: 60%; background-color: rgba(255, 182, 193, 0.15);
-  animation-duration: 26s; animation-delay: 4s;
-}
-.bubble:nth-child(7) { /* Medium Lavender Purple */
-  width: 130px; height: 130px; left: 70%; background-color: rgba(216, 191, 216, 0.12);
-  animation-duration: 21s; animation-delay: 2s;
-}
-.bubble:nth-child(8) { /* Small Muted Aqua/Teal */
-  width: 70px; height: 70px; left: 80%; background-color: rgba(127, 255, 212, 0.18);
-  animation-duration: 33s; animation-delay: 0.3s;
-}
-.bubble:nth-child(9) { /* Large Whitish/Light Tech Tone */
-  width: 170px; height: 170px; left: 90%; background-color: rgba(240, 248, 255, 0.15); /* Alice Blue */
-  animation-duration: 27s; animation-delay: 1.2s;
-}
-.bubble:nth-child(10) { /* Medium Soft Blue */
-  width: 95px; height: 95px; left: 5%; background-color: rgba(135, 206, 250, 0.22);
-  animation-duration: 24s; animation-delay: 3.5s;
-}
-.bubble:nth-child(11) { /* Small Pastel Pink */
-  width: 65px; height: 65px; left: 65%; background-color: rgba(255, 192, 203, 0.1);
-  animation-duration: 19s; animation-delay: 5s;
-}
-.bubble:nth-child(12) { /* Medium Lavender/Light Tech Tone */
-  width: 125px; height: 125px; left: 25%; background-color: rgba(220, 220, 220, 0.15); /* Gainsboro - light gray tech */
-  animation-duration: 31s; animation-delay: 1.8s;
-}
-
-@keyframes floatBubble {
-  0% {
-    bottom: -150px; /* Start below the viewport */
-    opacity: 0; /* Start fully transparent */
-    transform: translateX(0px) translateY(0px); /* Ensure translateY is part of transform */
-  }
-  10% {
-    opacity: 0.2; /* Fade in */
-  }
-  25% {
-    transform: translateX(20px) translateY(-25vh);
-  }
-  50% {
-    transform: translateX(-20px) translateY(-50vh);
-  }
-  75% {
-    transform: translateX(20px) translateY(-75vh);
-  }
-  90% {
-    opacity: 0.1; /* Start to fade out */
-  }
-  100% {
-    bottom: 105vh; /* Ensure it goes far enough up; translateY will also contribute */
-    opacity: 0; /* Fade out completely */
-    transform: translateX(0px) translateY(-100vh);
-  }
-}
-
-/* Removed separate drift animations and overrides for odd/even children.
-   All bubbles will use the modified floatBubble animation.
-   Varied horizontal drift can be achieved by different animation-delay
-   and animation-duration on individual bubbles, causing their translateX
-   phases within floatBubble to be out of sync. */
+/* All .bubble specific styles and @keyframes floatBubble, driftBubble, driftBubbleAlt are removed. */
