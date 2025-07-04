@@ -7,6 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   isScrolled = false;
+  isMobileMenuOpen = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -16,5 +17,9 @@ export class HeaderComponent {
     } else {
       this.isScrolled = false;
     }
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 }
