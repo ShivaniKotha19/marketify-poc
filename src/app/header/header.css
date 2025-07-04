@@ -1,0 +1,331 @@
+/* Overall Header Styling */
+.marketify-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem; /* Horizontal padding */
+  background-color: rgba(255, 255, 255, 0.05); /* Initial very subtle background */
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  height: 70px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); /* Subtle shadow for default state */
+}
+
+/* Header Sections Layout */
+.header-left, .header-center, .header-right {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Ensure sections take full header height for vertical alignment */
+}
+
+.header-left {
+  /* flex-shrink: 0; */ /* Prevent shrinking if space is tight */
+}
+
+.header-center {
+  flex-grow: 1; /* Allows center to take up available space */
+  justify-content: center; /* Centers the nav-links within it */
+}
+
+.header-right {
+  /* flex-shrink: 0; */
+  justify-content: flex-end; /* Align items to the end of this container */
+}
+
+/* Scrolled state for glassmorphism */
+.marketify-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.75); /* Lighter, more opaque for black text */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Softer shadow for lighter bg */
+}
+
+/* Logo Styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  background-image: linear-gradient(to right, #007bff, #00c6ff);
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Navigation Links Styling (Desktop) */
+.nav-links { /* This is the UL element */
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure it takes full height for alignment of children */
+}
+
+.nav-links li {
+  display: flex; /* To align 'a' tags vertically if needed */
+  align-items: center; /* Vertically center 'a' tags */
+}
+
+.nav-links a { /* These are the actual links */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000; /* Black text color */
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0; /* Vertical padding for click area, horizontal from margin */
+  margin: 0 1rem; /* Spacing between links */
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Make link area take full header height */
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0px; /* Position underline at the very bottom of the 'a' tag */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, #007bff, #00c6ff); /* Blue gradient underline */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #007bff; /* Link color changes on hover to start of gradient */
+  text-decoration: none;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Nav links in scrolled state remain black (no specific override needed here anymore) */
+
+/* Buttons Styling (Desktop - in .header-right) */
+.header-right .button,
+.header-right .cta-button {
+  margin-left: 1rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.login-button { /* This class is used by <a> and potentially <button> in mobile */
+  color: #007bff;
+  background-color: transparent;
+  border: 2px solid #007bff;
+}
+
+.login-button:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #0056b3;
+}
+
+.cta-button { /* This class is used by <button> */
+  color: #ffffff;
+  background-image: linear-gradient(to right, #007bff 0%, #00c6ff 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons in scrolled state retain default styling (no specific override needed here anymore) */
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none; /* Hidden by default, shown in media query */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  margin-left: auto; /* Pushes hamburger to the right if header-center/right are hidden */
+}
+
+.hamburger-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #000000; /* Black bars, assuming default header bg is lightish */
+  transition: all 0.3s ease-in-out;
+}
+.marketify-header.scrolled .hamburger-bar {
+   background-color: #000000; /* Keep black on scrolled light background */
+}
+
+
+.hamburger-menu.active .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hide mobile-only list items on desktop */
+.nav-links .mobile-only {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .marketify-header {
+    padding: 0 1rem; /* Adjust horizontal padding */
+    height: 60px; /* Slightly reduced header height for mobile */
+  }
+
+  .header-center, .header-right { /* Hide desktop nav and buttons */
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger */
+  }
+
+  .logo-icon { /* Adjust logo for mobile */
+    width: 28px; height: 28px; font-size: 1rem;
+  }
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  /* Mobile Menu Panel Styling */
+  .nav-links { /* This is the UL, becomes the panel */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Match mobile header height */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* White background for mobile menu */
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #e0e0e0;
+    /* display: none; is implicit, .active class will change to display: flex */
+    height: auto; /* Override desktop height full */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    display: block; /* Ensure li takes full width for children */
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a,
+  .nav-links .mobile-only .button, /* Target general .button class inside mobile-only */
+  .nav-links .mobile-only .cta-button { /* Target .cta-button class inside mobile-only */
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #000000; /* Black text for nav links in mobile menu */
+    text-decoration: none;
+    font-weight: 500;
+    width: 100%; /* Make them take full width of li */
+    box-sizing: border-box;
+  }
+
+  .nav-links a::after { /* Hide desktop underline on mobile */
+    display: none;
+  }
+
+  .nav-links a:hover {
+    background-color: #f8f9fa; /* Light gray hover */
+    color: #0056b3; /* Darker blue for text on hover */
+  }
+
+  /* Show mobile-only items in mobile menu */
+  .nav-links .mobile-only {
+    display: block; /* Make the li visible */
+  }
+
+  /* Styling for actual buttons within the mobile menu list items */
+  .nav-links .mobile-only .login-button,
+  .nav-links .mobile-only .cta-button {
+    margin: 0.75rem 0; /* Add some vertical margin */
+    padding: 0.85rem 1rem; /* Adjust padding for buttons */
+    text-align: center;
+    /* width: auto; */ /* Let them be full width of li via display:block above */
+    /* display: block; */ /* Already set */
+  }
+
+  .nav-links .mobile-only .login-button-mobile-wrapper,
+  .nav-links .mobile-only .cta-button-mobile-wrapper {
+      padding: 0.5rem 1.5rem; /* Padding for the LI wrapper around buttons */
+  }
+
+  .nav-links .mobile-only .login-button {
+      color: #007bff;
+      background-color: #ffffff;
+      border: 2px solid #007bff;
+  }
+  .nav-links .mobile-only .login-button:hover {
+      background-color: rgba(0, 123, 255, 0.05);
+  }
+
+  .nav-links .mobile-only .cta-button {
+      color: #ffffff;
+      background-image: linear-gradient(to right, #007bff 0%, #00c6ff 100%);
+      border: none;
+  }
+   .nav-links .mobile-only .cta-button:hover {
+      transform: none; /* No Y transform in list */
+      /* Maintain shadow or adjust */
+  }
+
+  /* Ensure scrolled styles for links don't conflict in mobile menu */
+  .marketify-header.scrolled .nav-links.active a {
+    color: #000000; /* Keep black text in mobile menu */
+  }
+   .marketify-header.scrolled .nav-links.active a:hover {
+    color: #0056b3;
+    background-color: #f8f9fa;
+  }
+}
