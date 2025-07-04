@@ -28,3 +28,8 @@ a {
 a:hover {
   /* text-decoration: underline; */ /* Removing global underline for cleaner component-level control */
 }
+
+/* TEMPORARY: For testing scroll effects */
+body {
+  min-height: 150vh;
+}

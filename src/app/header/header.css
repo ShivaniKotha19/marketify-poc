@@ -92,6 +92,7 @@
 .nav-links li {
   display: flex; /* To align 'a' tags vertically if needed */
   align-items: center; /* Vertically center 'a' tags */
+  height: 100%; /* Ensure li takes full height */
 }
 
 .nav-links a { /* These are the actual links */
