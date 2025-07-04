@@ -12,6 +12,7 @@
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   height: 70px; /* Example height */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); /* Subtle shadow for default state */
 }
 
 .header-left, .header-center, .header-right {
@@ -37,10 +38,11 @@
 
 /* Scrolled state for glassmorphism */
 .marketify-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.1); /* Slightly more visible for glass effect */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Adjusted for black text: lighter, more opaque background */
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px); /* Slightly reduced blur can sometimes help text clarity */
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Softer shadow for lighter bg */
 }
 
 /* New Logo Styling */
@@ -105,7 +107,7 @@
   text-decoration: none;
   position: relative;
   padding: 0.5rem 0.25rem; /* Adjusted padding */
-  margin: 0 0.75rem; /* Spacing between links */
+  margin: 0 1rem; /* Increased spacing between links */
   transition: color 0.3s ease;
 }
 
@@ -128,21 +130,6 @@
 .nav-links a:hover::after {
   width: 100%;
 }
-
-/* Adjust link color for scrolled state if needed for readability */
-.marketify-header.scrolled .nav-links a {
-  color: #ffffff; /* White text on scrolled/blurred background */
-}
-
-.marketify-header.scrolled .nav-links a:hover {
-  color: #cce5ff; /* Lighter blue/white for hover on scrolled state */
-}
-
-/* Ensure gradient underline is still visible or adapt if needed for scrolled state */
-.marketify-header.scrolled .nav-links a::after {
-  /* Gradient should still be fine, but could be adjusted if contrast is an issue */
-}
-
 
 /* Button Styling (in .header-right) */
 .header-right .button,
@@ -184,19 +171,9 @@
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
 }
 
-/* Adjust button colors for scrolled state if needed */
-.marketify-header.scrolled .login-button {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-
-.marketify-header.scrolled .login-button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #f0f0f0;
-}
-
 /* CTA button color (gradient) should be fine on scroll, but text color is already white. */
-
+/* Login button will now retain its default state styling on scroll,
+   assuming the new scrolled background provides enough contrast. */
 
 /* Hamburger Menu Styling */
 .hamburger-menu {
@@ -268,7 +245,7 @@
     /* display: none; is handled by .nav-links.active not being present initially */
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust based on new mobile header height (approx 2*0.75rem + icon height) */
+    top: 52px; /* Precise based on mobile header height (0.75rem*2 padding + 28px icon) */
     left: 0;
     width: 100%;
     background-color: #ffffff; /* Light background for mobile menu for black text */
