@@ -1,5 +1,3 @@
-import { Component } from '@angular/core';
-
 import { Component, HostListener } from '@angular/core';
 
 @Component({
