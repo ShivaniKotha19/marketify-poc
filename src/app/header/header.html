@@ -1,0 +1,32 @@
+<nav class="marketify-header" [ngClass]="{'scrolled': isScrolled}">
+  <div class="header-left">
+    <a href="#" class="logo-link">
+      <span class="logo-icon">M</span> <!-- Placeholder for initial-based icon -->
+      <span class="logo-text">Marketify</span>
+    </a>
+  </div>
+
+  <button class="hamburger-menu" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+
+  <div class="header-center">
+    <ul class="nav-links" [class.active]="isMobileMenuOpen">
+      <li><a href="#hero-section">Home</a></li> <!-- Assuming hero-section ID for scroll -->
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Developers</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <!-- Mobile-only buttons, hidden on desktop, shown in mobile menu -->
+      <li class="mobile-only login-button-mobile-wrapper"><a href="#" class="button login-button">Login</a></li>
+      <li class="mobile-only cta-button-mobile-wrapper"><button class="cta-button">Get Started</button></li>
+    </ul>
+  </div>
+
+  <div class="header-right">
+    <a href="#" class="button login-button">Login</a>
+    <button class="cta-button">Get Started</button>
+  </div>
+</nav>
