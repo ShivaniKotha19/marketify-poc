@@ -1,0 +1,65 @@
+<footer class="site-footer py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Column 1: Brand Overview -->
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 footer-column">
+        <h5 class="footer-brand mb-3">Marketify</h5>
+        <p class="footer-description text-muted small">
+          The fastest way to fetch company brand data. Get logos, colors, fonts, and metadata with a simple API call.
+        </p>
+        <div class="social-icons mt-3">
+          <a *ngFor="let social of socialLinks" [href]="social.href" target="_blank" rel="noopener noreferrer"
+             class="social-icon-link me-2" [title]="social.label" [attr.aria-label]="social.label">
+            <i [class]="social.iconClass"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Products -->
+      <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-column">
+        <h6 class="footer-column-title mb-3">Products</h6>
+        <ul class="list-unstyled footer-links">
+          <li *ngFor="let link of productLinks" class="mb-2">
+            <a [href]="link.href">{{ link.text }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Developers -->
+      <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-column">
+        <h6 class="footer-column-title mb-3">Developers</h6>
+        <ul class="list-unstyled footer-links">
+          <li *ngFor="let link of developerLinks" class="mb-2">
+            <a [href]="link.href">{{ link.text }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Company -->
+      <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-column">
+        <h6 class="footer-column-title mb-3">Company</h6>
+        <ul class="list-unstyled footer-links">
+          <li *ngFor="let link of companyLinks" class="mb-2">
+            <a [href]="link.href">{{ link.text }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Legal -->
+      <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-column">
+        <h6 class="footer-column-title mb-3">Legal</h6>
+        <ul class="list-unstyled footer-links">
+          <li *ngFor="let link of legalLinks" class="mb-2">
+            <a [href]="link.href">{{ link.text }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider my-4">
+
+    <div class="footer-bottom-row text-center">
+      <p class="copyright-text mb-0 small">&copy; {{ currentYear }} Marketify. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
