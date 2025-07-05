@@ -40,7 +40,7 @@ export class PricingPlansComponent implements OnInit, AfterViewInit {
       ctaText: 'Start Free Trial',
       iconClass: 'bi bi-person-gear', // Example icon
       isPopular: false,
-      ctaClass: 'btn-primary-blue' // Custom class for blue button
+      ctaClass: 'btn-main-gradient'
     },
     {
       name: 'Pro Plan',
@@ -57,7 +57,7 @@ export class PricingPlansComponent implements OnInit, AfterViewInit {
       ctaText: 'Start Free Trial',
       iconClass: 'bi bi-people-fill', // Example icon
       isPopular: true,
-      ctaClass: 'btn-gradient-blue-purple' // Custom class for gradient button
+      ctaClass: 'btn-main-gradient' // Standardized gradient class
     },
     {
       name: 'Enterprise Plan',
@@ -75,7 +75,7 @@ export class PricingPlansComponent implements OnInit, AfterViewInit {
       ctaText: 'Contact Sales',
       iconClass: 'bi bi-briefcase-fill', // Example icon
       isPopular: false,
-      ctaClass: 'btn-primary-blue' // Custom class for blue button (same as Developer for consistency or can be different)
+      ctaClass: 'btn-main-gradient' // Standardized gradient class
     }
   ];
 
