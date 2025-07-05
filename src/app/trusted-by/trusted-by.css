@@ -1,0 +1,68 @@
+/* Trusted By Section Styling */
+.trusted-by-section {
+  background-color: #ffffff; /* Clean white background, or #f8f9fa for very light gray */
+  /* py-5 from Bootstrap handles overall vertical padding */
+}
+
+.section-main-title { /* Consistent with other sections */
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 0.5rem;
+}
+
+.section-tagline {
+  font-size: 1.1rem;
+  color: #6c757d; /* Muted color */
+  margin-bottom: 2.5rem; /* Space after tagline before logos */
+}
+
+/* If using an accent line instead of tagline:
+.title-accent-line {
+  width: 80px;
+  height: 3px;
+  background-color: #007bff;
+  margin-bottom: 2.5rem;
+}
+*/
+
+.logo-item-wrapper {
+  /* text-center class from Bootstrap in HTML handles horizontal centering of the image */
+  /* The row has align-items-center for vertical alignment */
+  padding: 0.5rem; /* Add some padding around each logo cell if g-4 isn't enough */
+}
+
+.client-logo {
+  max-height: 50px; /* Consistent height for all logos */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't overflow its column */
+  object-fit: contain; /* Ensures logo fits nicely without cropping */
+  opacity: 0.65; /* Slightly muted look by default */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* filter: grayscale(100%); */ /* Alternative for muted look, remove on hover */
+}
+
+.client-logo:hover {
+  opacity: 1; /* Full opacity on hover */
+  transform: scale(0.95); /* Zoom out effect */
+  /* filter: grayscale(0%); */ /* If using grayscale filter */
+}
+
+/* Responsive adjustments for logo max-height if needed, though 50px is often good across sizes */
+@media (max-width: 767.98px) {
+  .client-logo {
+    max-height: 40px; /* Slightly smaller logos on mobile */
+  }
+  .section-main-title {
+    font-size: 2rem;
+  }
+  .section-tagline {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .client-logo {
+    max-height: 35px; /* Even smaller for very small screens */
+  }
+}
