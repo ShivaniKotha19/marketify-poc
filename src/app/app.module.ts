@@ -10,6 +10,7 @@ import { TeamFocusComponent } from './team-focus/team-focus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { CtaBannerComponent } from './cta-banner/cta-banner.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { PricingPlansComponent } from './pricing-plans/pricing-plans.component';
 
 // Lottie
 // import { LottieModule } from 'ngx-lottie'; // Removing Lottie
@@ -29,7 +30,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     TeamFocusComponent,
     HowItWorksComponent,
     CtaBannerComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    PricingPlansComponent
   ],
   imports: [
     BrowserModule,
