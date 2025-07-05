@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { CoreFeaturesComponent } from './core-features/core-features.component';
 import { TeamFocusComponent } from './team-focus/team-focus.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
 // Lottie
 // import { LottieModule } from 'ngx-lottie'; // Removing Lottie
@@ -23,7 +24,8 @@ import { TeamFocusComponent } from './team-focus/team-focus.component';
     HeaderComponent,
     HeroComponent,
     CoreFeaturesComponent,
-    TeamFocusComponent
+    TeamFocusComponent,
+    HowItWorksComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+<section id="how-it-works" class="how-it-works-section py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-main-title">How It Works</h2>
+        <p class="section-main-subtitle">
+          This section provides a simple, step-by-step overview of how Marketify works — from entering a domain to visualizing clean, structured brand data.
+          It is designed to be linear, intuitive, and visually engaging, helping users quickly understand the process and output of the platform.
+        </p>
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+      <!-- Left Column: Step Cards -->
+      <div class="col-md-6 steps-column">
+        <div *ngFor="let step of steps; let i = index"
+             class="step-card mb-4"
+             #stepCard
+             [style.transition-delay]="i * 150 + 'ms'">
+          <div class="step-card-header d-flex align-items-center mb-3">
+            <span class="step-number-badge me-3">{{ step.stepNumber }}</span>
+            <h4 class="step-title h5 mb-0">{{ step.title }}</h4>
+          </div>
+          <div class="step-visual-cue mb-2">
+            <!-- Visual cue will be styled with CSS based on step or text -->
+            <small><em>{{ step.visualCueText }}</em></small>
+          </div>
+          <p class="step-description">{{ step.description }}</p>
+        </div>
+      </div>
+
+      <!-- Right Column: Mock UI Image -->
+      <div class="col-md-6 mockup-column text-center">
+        <div class="mockup-image-container">
+          <img src="https://via.placeholder.com/550x400?text=Marketify+UI+Preview"
+               alt="Marketify UI Preview"
+               class="img-fluid mockup-image">
+          <!-- Placeholder for tabs representation if needed below image -->
+          <div class="mockup-tabs-visual mt-2">
+             <span class="badge bg-secondary me-1">JSON</span>
+             <span class="badge bg-secondary me-1">HTML</span>
+             <span class="badge bg-secondary">XML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
