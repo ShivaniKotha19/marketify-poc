@@ -8,6 +8,7 @@ import { HeroComponent } from './hero/hero.component';
 import { CoreFeaturesComponent } from './core-features/core-features.component';
 import { TeamFocusComponent } from './team-focus/team-focus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { CtaBannerComponent } from './cta-banner/cta-banner.component';
 
 // Lottie
 // import { LottieModule } from 'ngx-lottie'; // Removing Lottie
@@ -25,7 +26,8 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
     HeroComponent,
     CoreFeaturesComponent,
     TeamFocusComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    CtaBannerComponent
   ],
   imports: [
     BrowserModule,
