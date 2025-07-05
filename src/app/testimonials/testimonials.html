@@ -1,0 +1,46 @@
+<section class="testimonials-section py-5">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-main-title">What Our Users Say</h2>
+        <div class="title-accent-line mx-auto"></div>
+      </div>
+    </div>
+
+    <div class="testimonial-slider-container">
+      <div class="testimonial-track">
+        <div *ngFor="let testimonial of testimonials; let i = index"
+             class="testimonial-card-wrapper"> {/* Wrapper for sizing/spacing in track */}
+          <div class="testimonial-card" #testimonialCard>
+            <div class="card-header-flex d-flex align-items-center mb-3">
+              <img [src]="testimonial.imagePlaceholderUrl"
+                   alt="{{ testimonial.name }}"
+                   class="profile-image me-3">
+              <div>
+                <p class="name mb-0 fw-bold">{{ testimonial.name }}</p>
+                <p class="company text-muted small mb-0">{{ testimonial.company }}</p>
+              </div>
+            </div>
+            <blockquote class="quote mb-3 fst-italic">
+              "{{ testimonial.quote }}"
+            </blockquote>
+            <div class="star-rating">
+              <ng-container *ngFor="let isFilled of getStars(testimonial.rating)">
+                <i class="bi" [class.bi-star-fill]="isFilled" [class.bi-star]="!isFilled"></i>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conceptual: Navigation Dots/Arrows would go here -->
+    <!--
+    <div class="testimonial-navigation text-center mt-4">
+      <button class="btn btn-outline-primary btn-sm me-2">&lt;</button>
+      <span class="dot active"></span> <span class="dot"></span> <span class="dot"></span>
+      <button class="btn btn-outline-primary btn-sm ms-2">&gt;</button>
+    </div>
+    -->
+  </div>
+</section>
