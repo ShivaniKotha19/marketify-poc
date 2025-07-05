@@ -7,11 +7,11 @@
       </div>
     </div>
 
-    <div class="testimonial-slider-container">
-      <div class="testimonial-track">
-        <div *ngFor="let testimonial of testimonials; let i = index"
-             class="testimonial-card-wrapper"> {/* Wrapper for sizing/spacing in track */}
-          <div class="testimonial-card" #testimonialCard>
+    <div class="row justify-content-center"> {/* Replaced slider with Bootstrap row, centered */}
+      {/* Each card wrapper is now a Bootstrap column */}
+      <div *ngFor="let testimonial of testimonials; let i = index"
+           class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+          <div class="testimonial-card w-100" #testimonialCard> {/* Added w-100 for full width of col */}
             <div class="card-header-flex d-flex align-items-center mb-3">
               <img [src]="testimonial.imagePlaceholderUrl"
                    alt="{{ testimonial.name }}"
