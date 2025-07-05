@@ -15,6 +15,7 @@
 .footer-description {
   /* text-muted and small classes from Bootstrap in HTML will style this */
   line-height: 1.6;
+  color: rgb(255 255 255 / 75%) !important;
 }
 
 .social-icons {

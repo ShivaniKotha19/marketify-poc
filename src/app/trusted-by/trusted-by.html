@@ -8,9 +8,9 @@
       </div>
     </div>
 
-    <div class="row align-items-center justify-content-center g-4"> {/* g-4 for gutters/spacing */}
+    <div class="row align-items-center justify-content-center g-4">
       <div *ngFor="let logo of logos"
-           class="col-6 col-sm-4 col-md-3 col-lg-2 text-center logo-item-wrapper"> {/* Responsive columns: 2, 3, 4, 6 */}
+           class="col-6 col-sm-4 col-md-3 col-lg-2 text-center logo-item-wrapper">
         <img [src]="logo.imageUrl"
              [alt]="logo.name + ' logo'"
              class="client-logo img-fluid">
