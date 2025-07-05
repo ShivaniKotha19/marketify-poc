@@ -1,0 +1,127 @@
+/* CTA Banner Section Styling */
+.cta-banner-section {
+  width: 100%;
+  padding: 5rem 1.5rem; /* Ample vertical padding, standard horizontal */
+  background-image: linear-gradient(to right, #0d1b2a, #1b263b); /* Deep navy to darker blue gradient */
+  color: #ffffff; /* Default text color for this section */
+  display: flex;
+  flex-direction: column; /* Stack content vertically first */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  text-align: center;
+  position: relative; /* For potential pseudo-elements or entry animations */
+  overflow: hidden; /* Contain any effects */
+  min-height: 50vh; /* Ensure it has a decent height */
+}
+
+.cta-banner-content {
+  max-width: 700px; /* Max width for text readability */
+  width: 100%; /* Ensure it takes up space within padding */
+}
+
+.cta-title {
+  font-size: 2.75rem; /* Large font size */
+  font-weight: 700; /* Bold */
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cta-subtext {
+  font-size: 1.15rem;
+  color: #e0e0e0; /* Softer white / light gray */
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.cta-button-main {
+  background-image: linear-gradient(to right, #007bff 0%, #00c6ff 50%, #007bff 100%); /* Blue gradient */
+  background-size: 200% auto; /* For hover animation */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.9rem 2.5rem;
+  border-radius: 30px; /* Rounded corners */
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Initial subtle shadow */
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  justify-content: center;
+  position: relative; /* For glowing border pseudo-element */
+  z-index: 1; /* Ensure button content is above pseudo-elements */
+}
+
+.cta-button-main .bi-arrow-right-short {
+  margin-left: 0.5rem;
+  font-size: 1.3em; /* Make icon slightly larger than button text */
+  transition: transform 0.3s ease;
+}
+
+.cta-button-main:hover {
+  background-position: right center; /* Shift gradient for animation */
+  transform: translateY(-2px); /* Slight lift */
+  /* box-shadow is handled by the glowing border effect below */
+}
+
+/* Glowing border on hover for CTA button */
+.cta-button-main::before {
+  content: '';
+  position: absolute;
+  top: -3px; left: -3px; /* Adjust for desired glow size/offset */
+  right: -3px; bottom: -3px;
+  border-radius: 33px; /* Slightly larger than button's border-radius */
+  background-image: linear-gradient(to right, #007bff, #00c6ff);
+  z-index: -1; /* Behind the button */
+  opacity: 0;
+  filter: blur(8px); /* Adjust blur for glow intensity */
+  transition: opacity 0.4s ease-in-out;
+}
+
+.cta-button-main:hover::before {
+  opacity: 0.75; /* Adjust for desired glow intensity */
+}
+
+.cta-button-main:hover .bi-arrow-right-short {
+  transform: translateX(5px); /* Move arrow slightly on hover */
+}
+
+/* Entry Animation (conceptual - for fade-in of the section) */
+.cta-banner-section {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.cta-banner-section.is-visible {
+  opacity: 1;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-banner-section {
+    padding: 4rem 1rem;
+    min-height: 40vh;
+  }
+  .cta-title {
+    font-size: 2.25rem;
+  }
+  .cta-subtext {
+    font-size: 1.05rem;
+  }
+  .cta-button-main {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-title {
+    font-size: 1.8rem;
+  }
+  .cta-subtext {
+    font-size: 0.95rem;
+  }
+}
