@@ -1,0 +1,151 @@
+/* Testimonials Section Styling */
+.testimonials-section {
+  background-color: #f8f9fa; /* Light gray background to differentiate from other sections */
+  /* py-5 from Bootstrap handles overall vertical padding */
+}
+
+.section-main-title { /* Consistent with other sections */
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 0.5rem; /* Reduced margin to bring accent line closer */
+}
+
+.title-accent-line {
+  width: 80px;
+  height: 3px;
+  background-color: #007bff; /* Theme blue */
+  margin-bottom: 2.5rem; /* Space after accent line (adjusts for removed title margin) */
+  /* mx-auto in HTML centers it */
+}
+
+.testimonial-slider-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding-bottom: 1rem; /* Space for scrollbar if it appears, avoids content jump */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+
+  /* Basic CSS Scroll Snap for a carousel-like feel */
+  scroll-snap-type: x mandatory; /* Snap to items horizontally */
+
+  /* Hide scrollbar (cross-browser) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.testimonial-slider-container::-webkit-scrollbar { /* Chrome, Safari, Opera */
+  display: none;
+}
+
+.testimonial-track {
+  display: flex; /* Lay out cards horizontally */
+  width: max-content; /* Allow track to be wider than container for scrolling */
+  padding-left: calc((100% - var(--card-width, 300px)) / 2); /* Center first card roughly */
+  padding-right: calc((100% - var(--card-width, 300px)) / 2); /* Center last card roughly */
+}
+
+.testimonial-card-wrapper {
+  flex: 0 0 auto; /* Prevent cards from shrinking/growing */
+  width: var(--card-width, 320px); /* Define card width, can be adjusted */
+  max-width: 90vw; /* Ensure card is not too wide on small viewports if not stacking yet */
+  margin-right: 1.5rem; /* Space between cards */
+  scroll-snap-align: center; /* Snap cards to the center of the scroll container */
+}
+.testimonial-card-wrapper:last-child {
+  margin-right: 0;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* Soft shadow */
+  /* h-100 class from Bootstrap ensures equal height if needed, but cards are fixed width here */
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; is on the card in HTML, if desired. Current HTML centers header block. */
+  opacity: 0; /* Initial state for entry animation */
+  transform: translateY(20px); /* Initial state for entry animation */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease;
+}
+
+.testimonial-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03) translateY(0); /* Slight scale, ensure Y transform from entry is overridden */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensure image covers the area well */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.name { /* p.name */
+  font-size: 1.1rem;
+  /* fw-bold from Bootstrap in HTML */
+  color: #343a40;
+}
+
+.company { /* p.company */
+  /* text-muted and small from Bootstrap in HTML */
+  font-size: 0.85rem; /* Override Bootstrap small if needed */
+}
+
+.quote { /* blockquote.quote */
+  font-size: 1.05rem; /* Larger font for quote */
+  /* fst-italic from Bootstrap in HTML */
+  color: #495057;
+  flex-grow: 1; /* Allows quote to take available space, pushing stars down */
+  margin-top: 0.5rem;
+  margin-bottom: 1rem !important; /* Ensure spacing before stars */
+}
+
+.star-rating {
+  color: #ffc107; /* Soft gold/yellow for stars */
+  font-size: 1rem; /* Adjust star size */
+}
+
+.star-rating .bi-star-fill {
+  /* Filled star color is inherited */
+}
+
+.star-rating .bi-star {
+  /* Empty star color is inherited, or can be set to a lighter gray if preferred */
+  opacity: 0.5;
+}
+
+/* Responsive: Stack cards vertically on smaller screens */
+@media (max-width: 767.98px) {
+  .testimonial-slider-container {
+    overflow-x: visible; /* Disable horizontal scroll */
+    scroll-snap-type: none; /* Disable scroll snapping */
+    padding-left: 0; /* Reset padding for centering scroll snap */
+    padding-right: 0;
+  }
+  .testimonial-track {
+    flex-direction: column; /* Stack cards vertically */
+    width: 100%; /* Take full width */
+    align-items: center; /* Center cards if they have a max-width */
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .testimonial-card-wrapper {
+    width: 100%; /* Cards take full width of their container */
+    max-width: 500px; /* Optional: Max width for stacked cards */
+    margin-right: 0;
+    margin-bottom: 1.5rem; /* Space between stacked cards */
+    scroll-snap-align: none;
+  }
+  .testimonial-card {
+    text-align: left; /* Often better for stacked cards */
+  }
+  .card-header-flex { /* d-flex from HTML */
+    /* text-align: left; will apply to children if not overridden */
+  }
+}

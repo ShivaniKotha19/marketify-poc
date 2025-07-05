@@ -9,6 +9,7 @@ import { CoreFeaturesComponent } from './core-features/core-features.component';
 import { TeamFocusComponent } from './team-focus/team-focus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { CtaBannerComponent } from './cta-banner/cta-banner.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 // Lottie
 // import { LottieModule } from 'ngx-lottie'; // Removing Lottie
@@ -27,7 +28,8 @@ import { CtaBannerComponent } from './cta-banner/cta-banner.component';
     CoreFeaturesComponent,
     TeamFocusComponent,
     HowItWorksComponent,
-    CtaBannerComponent
+    CtaBannerComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,
