@@ -1,0 +1,20 @@
+<section class="trusted-by-section py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-main-title">Trusted by Forward-Thinking Teams</h2>
+        <p class="section-tagline text-muted">From startups to enterprises, leading companies use Marketify.</p>
+        <!-- Or use a <div class="title-accent-line mx-auto"></div> if preferred -->
+      </div>
+    </div>
+
+    <div class="row align-items-center justify-content-center g-4"> {/* g-4 for gutters/spacing */}
+      <div *ngFor="let logo of logos"
+           class="col-6 col-sm-4 col-md-3 col-lg-2 text-center logo-item-wrapper"> {/* Responsive columns: 2, 3, 4, 6 */}
+        <img [src]="logo.imageUrl"
+             [alt]="logo.name + ' logo'"
+             class="client-logo img-fluid">
+      </div>
+    </div>
+  </div>
+</section>

@@ -11,6 +11,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { CtaBannerComponent } from './cta-banner/cta-banner.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { PricingPlansComponent } from './pricing-plans/pricing-plans.component';
+import { TrustedByComponent } from './trusted-by/trusted-by.component';
 
 // Lottie
 // import { LottieModule } from 'ngx-lottie'; // Removing Lottie
@@ -31,7 +32,8 @@ import { PricingPlansComponent } from './pricing-plans/pricing-plans.component';
     HowItWorksComponent,
     CtaBannerComponent,
     TestimonialsComponent,
-    PricingPlansComponent
+    PricingPlansComponent,
+    TrustedByComponent
   ],
   imports: [
     BrowserModule,
