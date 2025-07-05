@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+
 
 import { Component, OnInit, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 
@@ -23,7 +23,7 @@ export class TestimonialsComponent implements OnInit, AfterViewInit { // Added A
     {
       name: 'Sarah Mitchell',
       company: 'Lead UI Designer, Creatix',
-      quote: '“Marketify helped us speed up our branding process like never before. It’s now part of every project kickoff!”',
+      quote: '“Marketify helped us speed up our branding process like never before. It’s now part of every kickoff!”',
       imagePlaceholderUrl: 'https://via.placeholder.com/60x60?text=SM',
       rating: 5
     },

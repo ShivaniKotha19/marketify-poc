@@ -20,16 +20,8 @@
 }
 
 .testimonial-slider-container {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  padding-bottom: 1rem; /* Space for scrollbar if it appears, avoids content jump */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
-
-  /* Basic CSS Scroll Snap for a carousel-like feel */
-  scroll-snap-type: x mandatory; /* Snap to items horizontally */
-
-  /* Hide scrollbar (cross-browser) */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  display: flex;
+  justify-content: center;
 }
 .testimonial-slider-container::-webkit-scrollbar { /* Chrome, Safari, Opera */
   display: none;
@@ -38,8 +30,6 @@
 .testimonial-track {
   display: flex; /* Lay out cards horizontally */
   width: max-content; /* Allow track to be wider than container for scrolling */
-  padding-left: calc((100% - var(--card-width, 300px)) / 2); /* Center first card roughly */
-  padding-right: calc((100% - var(--card-width, 300px)) / 2); /* Center last card roughly */
 }
 
 .testimonial-card-wrapper {

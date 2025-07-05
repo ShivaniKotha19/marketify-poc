@@ -7,8 +7,8 @@
       </div>
     </div>
 
-    <div class="features-list-container"> 
-      <div *ngFor="let feature of features; let i = index" class="mb-4"> 
+    <div class="features-list-container d-flex"> 
+      <div *ngFor="let feature of features; let i = index" class="mr-4"> 
         <div class="feature-card h-100" #featureCard [style.transition-delay]="i * 100 + 'ms'">
           <div class="feature-card-icon-wrapper mb-3">
             <i [class]="feature.iconPlaceholder + ' feature-card-icon-element'"></i>
