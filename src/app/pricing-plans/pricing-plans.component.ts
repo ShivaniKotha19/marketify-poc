@@ -4,16 +4,13 @@ import { Component, OnInit, AfterViewInit, ElementRef, QueryList, ViewChildren }
 
 interface PricingPlan {
   name: string;
-  monthlyPrice: string; // Using string to accommodate "Custom"
-  yearlyPrice: string;  // Using string to accommodate "Custom"
-  priceSuffixMonthly: string;
-  priceSuffixYearly: string;
-  yearlySavingsNote?: string; // Optional
+  price: string;
+  tagline: string;
   features: string[];
   ctaText: string;
-  iconClass: string; // Bootstrap Icon class
-  isPopular?: boolean; // Optional
-  ctaClass?: string; // For different button styling e.g. primary/secondary
+  iconClass?: string; // Optional Bootstrap Icon class for a small plan icon/badge
+  isPopular?: boolean;
+  ctaClass: string;
 }
 
 @Component({
@@ -26,57 +23,59 @@ export class PricingPlansComponent implements OnInit, AfterViewInit {
   @ViewChildren('pricingCard') pricingCards!: QueryList<ElementRef>;
   private observer!: IntersectionObserver;
 
-  isYearlyBilled: boolean = false;
+  // isYearlyBilled: boolean = false; // Removed
 
   pricingPlans: PricingPlan[] = [
     {
-      name: 'Free Plan',
-      monthlyPrice: '$0',
-      yearlyPrice: '$0',
-      priceSuffixMonthly: '/month',
-      priceSuffixYearly: '/year',
+      name: 'Developer Plan',
+      price: '$29/month',
+      tagline: 'Perfect for individual developers and small projects',
       features: [
-        'Limited brand lookups',
-        'Basic brand asset preview',
-        'No export options'
+        '10,000 API requests/month',
+        'Basic brand data access',
+        'Email support',
+        'Standard rate limits',
+        'Community access'
       ],
-      ctaText: 'Start Free',
-      iconClass: 'bi bi-box-seam', // Example icon
-      ctaClass: 'btn-outline-primary' // Example: secondary button style
+      ctaText: 'Start Free Trial',
+      iconClass: 'bi bi-person-gear', // Example icon
+      isPopular: false,
+      ctaClass: 'btn-primary-blue' // Custom class for blue button
     },
     {
       name: 'Pro Plan',
-      monthlyPrice: '$15',
-      yearlyPrice: '$144',
-      priceSuffixMonthly: '/month',
-      priceSuffixYearly: '/year',
-      yearlySavingsNote: 'save 20%',
+      price: '$99/month',
+      tagline: 'Best for growing teams and businesses',
       features: [
-        'Unlimited brand lookups',
-        'Export as JSON/HTML/XML',
-        'Access to color palettes and fonts',
-        'Email support'
+        '100,000 API requests/month',
+        'Premium brand data + analytics',
+        'Priority support',
+        'Higher rate limits',
+        'Advanced integrations',
+        'Custom webhooks'
       ],
-      ctaText: 'Upgrade to Pro',
-      iconClass: 'bi bi-gem', // Example icon
+      ctaText: 'Start Free Trial',
+      iconClass: 'bi bi-people-fill', // Example icon
       isPopular: true,
-      ctaClass: 'btn-primary' // Example: primary button style
+      ctaClass: 'btn-gradient-blue-purple' // Custom class for gradient button
     },
     {
       name: 'Enterprise Plan',
-      monthlyPrice: 'Custom',
-      yearlyPrice: 'Custom',
-      priceSuffixMonthly: '', // No suffix for "Custom"
-      priceSuffixYearly: '',
+      price: 'Custom pricing',
+      tagline: 'For large organizations with custom needs',
       features: [
-        'Everything in Pro',
-        'Team collaboration tools',
-        'API access with SLA',
-        'Dedicated support & onboarding'
+        'Unlimited API requests',
+        'Full brand data suite',
+        'Dedicated support manager',
+        'Custom rate limits',
+        'SLA guarantees',
+        'On-premise deployment',
+        'Custom integrations'
       ],
       ctaText: 'Contact Sales',
-      iconClass: 'bi bi-building', // Example icon
-      ctaClass: 'btn-outline-secondary' // Example: different outline
+      iconClass: 'bi bi-briefcase-fill', // Example icon
+      isPopular: false,
+      ctaClass: 'btn-primary-blue' // Custom class for blue button (same as Developer for consistency or can be different)
     }
   ];
 
@@ -85,9 +84,9 @@ export class PricingPlansComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  toggleBillingCycle(): void {
-    this.isYearlyBilled = !this.isYearlyBilled;
-  }
+  // toggleBillingCycle(): void { // Removed
+  //   this.isYearlyBilled = !this.isYearlyBilled;
+  // }
 
   ngAfterViewInit(): void {
     const options = {

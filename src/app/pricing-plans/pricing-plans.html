@@ -1,25 +1,17 @@
 <section class="pricing-section py-5">
   <div class="container">
-    <div class="row text-center mb-4">
+    <div class="row text-center mb-5"> {/* Increased bottom margin for title section */}
       <div class="col-lg-8 mx-auto">
-        <h2 class="section-main-title">Flexible Plans for Everyone</h2>
-        <p class="section-main-subtitle">Choose the plan that fits your needs and scale as you grow.</p>
+        <h2 class="section-main-title">Simple, Transparent Pricing</h2>
+        <p class="section-main-subtitle">Choose the plan that fits your needs. Start with a free trial, no credit card required.</p>
       </div>
     </div>
 
-    <!-- Billing Toggle Switch -->
-    <div class="billing-toggle-container d-flex justify-content-center align-items-center mb-5">
-      <span class="billing-label me-2" [class.active]="!isYearlyBilled">Monthly</span>
-      <div class="toggle-switch" (click)="toggleBillingCycle()" [class.yearly]="isYearlyBilled">
-        <div class="toggle-switch-handle"></div>
-      </div>
-      <span class="billing-label ms-2" [class.active]="isYearlyBilled">Yearly</span>
-      <span class="badge bg-success ms-2 yearly-savings-badge" *ngIf="isYearlyBilled">Save up to 20%!</span>
-    </div>
+    {/* Billing Toggle Switch Removed */}
 
     <div class="row justify-content-center">
       <div *ngFor="let plan of pricingPlans; let i = index"
-           class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+           class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch"> {/* Ensures 3 cards on lg, 2 on md, 1 on sm */}
         <div class="pricing-card text-center p-4 h-100"
              #pricingCard
              [style.transition-delay]="i * 100 + 'ms'"
@@ -27,37 +19,36 @@
 
           <div *ngIf="plan.isPopular" class="popular-badge">Most Popular</div>
 
-          <div class="plan-icon-wrapper mb-3">
+          <div *ngIf="plan.iconClass" class="plan-icon-wrapper mb-3"> {/* Optional plan icon */}
             <i class="{{ plan.iconClass }} plan-icon"></i>
           </div>
 
-          <h3 class="plan-name h5 mb-3 fw-bold">{{ plan.name }}</h3>
+          <h3 class="plan-name h5 mb-2 fw-bold">{{ plan.name }}</h3>
 
           <div class="price-display mb-3">
-            <div *ngIf="!isYearlyBilled" class="price-value monthly-price price-anim">
-              <span class="price-amount">{{ plan.monthlyPrice }}</span>
-              <span class="price-suffix" *ngIf="plan.monthlyPrice !== 'Custom'">{{ plan.priceSuffixMonthly }}</span>
-            </div>
-            <div *ngIf="isYearlyBilled" class="price-value yearly-price price-anim">
-              <span class="price-amount">{{ plan.yearlyPrice }}</span>
-              <span class="price-suffix" *ngIf="plan.yearlyPrice !== 'Custom'">{{ plan.priceSuffixYearly }}</span>
-              <div *ngIf="plan.yearlySavingsNote" class="yearly-savings-note text-success small mt-1">
-                {{ plan.yearlySavingsNote }}
-              </div>
-            </div>
+            <span class="price-amount fw-bold">{{ plan.price }}</span>
+            {/* Suffix like /month is now part of plan.price if needed */}
           </div>
 
-          <ul class="list-unstyled features-list mb-4 text-start">
+          <p class="plan-tagline text-muted small mb-4">{{ plan.tagline }}</p>
+
+          <ul class="list-unstyled features-list mb-4 text-start flex-grow-1"> {/* flex-grow-1 to push button down */}
             <li *ngFor="let feature of plan.features" class="d-flex align-items-start mb-2">
-              <i class="bi bi-check text-success me-2 pt-1"></i>
+              <i class="bi bi-check-lg text-primary me-2 pt-1"></i> {/* Using text-primary for checkmark, can be customized */}
               <span>{{ feature }}</span>
             </li>
           </ul>
 
-          <button class="btn mt-auto w-100" [ngClass]="plan.ctaClass || 'btn-primary'">
+          <button class="btn mt-auto w-100" [ngClass]="plan.ctaClass">
             {{ plan.ctaText }}
           </button>
         </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col text-center mt-5">
+        <p class="pricing-footer-message">Have questions? Check out our <a href="#">FAQ</a> or <a href="#">contact us</a>.</p>
       </div>
     </div>
   </div>
