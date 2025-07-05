@@ -12,6 +12,7 @@ import { CtaBannerComponent } from './cta-banner/cta-banner.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { PricingPlansComponent } from './pricing-plans/pricing-plans.component';
 import { TrustedByComponent } from './trusted-by/trusted-by.component';
+import { FooterComponent } from './footer/footer.component';
 
 // Lottie
 // import { LottieModule } from 'ngx-lottie'; // Removing Lottie
@@ -33,7 +34,8 @@ import { TrustedByComponent } from './trusted-by/trusted-by.component';
     CtaBannerComponent,
     TestimonialsComponent,
     PricingPlansComponent,
-    TrustedByComponent
+    TrustedByComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

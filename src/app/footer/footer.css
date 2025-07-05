@@ -1,0 +1,106 @@
+/* Footer Section Styling */
+.site-footer {
+  background-color: #0d1b2a; /* Deep navy blue / very dark blue */
+  color: #adb5bd; /* Light gray for general text, slightly muted */
+  /* py-5 for padding is in HTML */
+}
+
+.footer-brand {
+  color: #ffffff; /* White for brand name */
+  font-weight: 600;
+  font-size: 1.5rem;
+  /* Potentially apply gradient like header logo if desired, for now simple white */
+}
+
+.footer-description {
+  /* text-muted and small classes from Bootstrap in HTML will style this */
+  line-height: 1.6;
+}
+
+.social-icons {
+  /* mt-3 from HTML */
+}
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.375rem; /* Rounded square - Bootstrap's default rounded */
+  background-color: rgba(255, 255, 255, 0.1); /* Darker button background */
+  color: #ffffff; /* White icon */
+  font-size: 1.1rem; /* Icon size */
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* me-2 from HTML for spacing */
+}
+
+.social-icon-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+  color: #ffffff; /* Keep icon white or make it theme blue */
+}
+
+.footer-column-title { /* h6 elements */
+  color: #ffffff; /* White for column titles */
+  font-weight: 600; /* Bold titles */
+  font-size: 1rem;
+  /* mb-3 from HTML */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links li a {
+  color: #adb5bd; /* Muted link color */
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-links li a:hover {
+  color: #ffffff; /* Lighter gray/white on hover */
+  /* text-decoration: underline; */ /* Optional: underline on hover */
+  padding-left: 5px; /* Slight indent on hover for visual cue */
+}
+
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.1); /* Subtle divider color */
+  /* my-4 for margin from HTML */
+}
+
+.copyright-text {
+  /* mb-0 and small from HTML */
+  color: #6c757d; /* More muted for copyright */
+  font-size: 0.8rem; /* Ensure it's small */
+}
+
+
+/* Responsive adjustments for footer columns if needed beyond Bootstrap's grid */
+@media (max-width: 991.98px) { /* lg breakpoint */
+  .footer-column {
+    /* text-align: center; /* Optional: center text in columns when they stack more */
+  }
+  .social-icons {
+    /* justify-content: center; /* If text is centered */
+  }
+}
+
+@media (max-width: 767.98px) { /* md breakpoint */
+  .footer-brand, .footer-column-title {
+    /* text-align: center; /* Center titles when stacking */
+  }
+  .footer-description, .footer-links {
+    /* text-align: center; */
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center; /* Center social icons when brand overview is full width */
+    margin-bottom: 1.5rem; /* Add space if it's above other stacked columns */
+  }
+   .footer-column {
+    text-align: center; /* Center all footer column content when fully stacked */
+  }
+  .footer-links ul, .footer-links li {
+    /* text-align: center; */ /* Ensure lists are also centered */
+  }
+}
